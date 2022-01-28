@@ -4,12 +4,17 @@ Copyright (c) 2019 - present AppSeed.us
 """
 from django.conf import settings
 from os import path
+from django.urls import resolve
 from django.contrib.auth.decorators import login_required
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse, JsonResponse, Http404
 from django import template
 from django.views import View
+
+from django.utils import translation
+from django.utils.translation import gettext as _
 
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
@@ -42,29 +47,27 @@ def util_get_numeric(string):
 
     return value, dtype
 
+def util_get_i18n_context(lang):
+    context = {"i18n":lang}
+    return context
+
 def util_get_valid_lang_or_404(lang):
-    if lang not in ["en", "eo"]:
-        raise Http404("Invalid selected interface language.")
+    if not lang or lang == "":
+        return "en-us"#default is English
+    if lang not in ["en-us", "eo"]:
+        raise Http404("Invalid selected interface language: {0}.".format(lang))
+    return lang
 
 class Homepage(View):
     template_name = 'home/index.html'
 
     def get(self, request, *args, **kwargs):
 
-        context = {}
-        context["i18n"] = "en"
+        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        context = {}#util_get_i18n_context(current_lang)
+
 
         return render(request, self.template_name, context)
-
-class I18nSwitch(View):
-
-    def get(self, request, *args, **kwargs):
-
-        context = {}
-        lang = context["lang"]
-
-        return render(request, self.template_name, context)
-
 
 def HomeJSONView(request):
 

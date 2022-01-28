@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-28 08:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: planet/templates/cookie-cutter/account/account_inactive.html:5
+#: planet/templates/cookie-cutter/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:27
+msgid "Verified"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:29
+msgid "Unverified"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:31
+msgid "Primary"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:37
+msgid "Make Primary"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:38
+msgid "Re-send Verification"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:39
+msgid "Remove"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:46
+msgid "Warning:"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:51
+msgid "Add E-mail Address"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:56
+msgid "Add E-mail"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email_confirm.html:6
+#: planet/templates/cookie-cutter/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/login.html:7
+#: planet/templates/cookie-cutter/account/login.html:11
+#: planet/templates/cookie-cutter/account/login.html:44
+#: planet/templates/cookie-cutter/base.html:87
+msgid "Sign In"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/login.html:16
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/login.html:26
+msgid "or"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/login.html:33
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/login.html:43
+msgid "Forgot Password?"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/logout.html:5
+#: planet/templates/cookie-cutter/account/logout.html:8
+#: planet/templates/cookie-cutter/account/logout.html:17
+#: planet/templates/cookie-cutter/base.html:78
+msgid "Sign Out"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_change.html:6
+#: planet/templates/cookie-cutter/account/password_change.html:9
+#: planet/templates/cookie-cutter/account/password_change.html:14
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:5
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:8
+#: planet/templates/cookie-cutter/account/password_reset_from_key_done.html:4
+#: planet/templates/cookie-cutter/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset.html:7
+#: planet/templates/cookie-cutter/account/password_reset.html:11
+#: planet/templates/cookie-cutter/account/password_reset_done.html:6
+#: planet/templates/cookie-cutter/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset.html:21
+msgid "Reset My Password"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset.html:24
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_reset_from_key.html:21
+#: planet/templates/cookie-cutter/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/password_set.html:6
+#: planet/templates/cookie-cutter/account/password_set.html:9
+#: planet/templates/cookie-cutter/account/password_set.html:14
+msgid "Set Password"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/signup.html:6
+msgid "Signup"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/signup.html:9
+#: planet/templates/cookie-cutter/account/signup.html:19
+#: planet/templates/cookie-cutter/base.html:83
+msgid "Sign Up"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/signup_closed.html:5
+#: planet/templates/cookie-cutter/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/verification_sent.html:5
+#: planet/templates/cookie-cutter/account/verification_sent.html:8
+#: planet/templates/cookie-cutter/account/verified_email_required.html:5
+#: planet/templates/cookie-cutter/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: planet/templates/cookie-cutter/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: planet/templates/cookie-cutter/base.html:74
+msgid "My Profile"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:7
+msgid "HOME"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:8
+msgid "DASHBOARD"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:10
+msgid "Dashboard"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:23
+msgid "LOGOUT"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:64
+msgid "New message"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:64
+msgid "from"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:68
+msgid "minutes ago"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:82
+msgid "New album"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:82
+msgid "by"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:86
+msgid "day"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:97
+msgid "credit-card"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:112
+msgid "Payment successfully completed"
+msgstr ""
+
+#: planet/templates/includes/navigation.html:116
+msgid "days"
+msgstr ""
+
+#: planet/users/admin.py:18
+msgid "Personal info"
+msgstr ""
+
+#: planet/users/admin.py:20
+msgid "Permissions"
+msgstr ""
+
+#: planet/users/admin.py:31
+msgid "Important dates"
+msgstr ""
+
+#: planet/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: planet/users/forms.py:18 planet/users/tests/test_forms.py:39
+msgid "This username has already been taken."
+msgstr ""
+
+#: planet/users/models.py:11
+msgid "Name of User"
+msgstr ""
+
+#: planet/users/views.py:25
+msgid "Information successfully updated"
+msgstr ""
