@@ -42,19 +42,29 @@ def util_get_numeric(string):
 
     return value, dtype
 
-def homepage(request):
+def util_get_valid_lang_or_404(lang):
+    if lang not in ["en", "eo"]:
+        raise Http404("Invalid selected interface language.")
 
-    context = {}
-    html_template = loader.get_template('home/index.html')
-    return HttpResponse(html_template.render(context, request))
+class Homepage(View):
+    template_name = 'home/index.html'
 
-def downloads(request):
+    def get(self, request, *args, **kwargs):
 
-    context = {}
-    context['segment'] = 'downloads'
+        context = {}
+        context["i18n"] = "en"
 
-    html_template = loader.get_template('downloads.html')
-    return HttpResponse(html_template.render(context, request))
+        return render(request, self.template_name, context)
+
+class I18nSwitch(View):
+
+    def get(self, request, *args, **kwargs):
+
+        context = {}
+        lang = context["lang"]
+
+        return render(request, self.template_name, context)
+
 
 def HomeJSONView(request):
 
@@ -68,10 +78,6 @@ class MetadataView(View):
     def get(self, request, *args, **kwargs):
 
         context = {}
-
-
-        #context["full_data_table_thead_content"] = thead_content
-        #context["full_data_table_tbody_content"] = tbody_content
 
         return render(request, self.template_name, context)
 

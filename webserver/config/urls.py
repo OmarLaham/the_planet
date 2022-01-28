@@ -19,8 +19,8 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
     path('member/', include("apps.authentication.urls")), # Auth routes - login / register
-    path("", views.homepage, name='home')
-
+    path("", views.Homepage.as_view(), name='home'),
+    path("/<str:lang>", views.i18n, name='i18n_switch')
     # UI Kits Html files
 ]
 
