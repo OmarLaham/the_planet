@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% block title %} About The Planet {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>About "The Planet"</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-4">
+              Empower people to be able to take real actions that can lead them to the life they desire while challenging the current barriers between them and the chains of the global political system.
+              <br />
+              Empower everyone to learn and practise politics in “The Planet” community where the borders between countries vanish and people coexist and speak one unified formal language to lead the movement towards real offline actions.
+              <br />
+              Making world wide changes possible again despite the current global political and social situation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

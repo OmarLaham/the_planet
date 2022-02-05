@@ -58,7 +58,7 @@ def util_get_valid_lang_or_404(lang):
         raise Http404("Invalid selected interface language: {0}.".format(lang))
     return lang
 
-class Homepage(View):
+class HomepageView(View):
     template_name = 'home/index.html'
 
     def get(self, request, *args, **kwargs):
@@ -66,6 +66,24 @@ class Homepage(View):
         current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
         context = {}#util_get_i18n_context(current_lang)
 
+        return render(request, self.template_name, context)
+
+
+class AboutThePlanetView(View):
+    template_name = 'home/about_the_planet.html'
+
+    def get(self, request, *args, **kwargs):
+        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        context = {}  # util_get_i18n_context(current_lang)
+
+        return render(request, self.template_name, context)
+
+class ProblemsView(View):
+    template_name = 'home/problems.html'
+
+    def get(self, request, *args, **kwargs):
+        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        context = {}  # util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
 

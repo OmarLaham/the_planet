@@ -20,7 +20,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
     path('member/', include("apps.authentication.urls")), # Auth routes - login / register
     path('i18n/', include('django.conf.urls.i18n')), #https://docs.djangoproject.com/en/dev/topics/i18n/translation/#the-set-language-redirect-view
-    path("", views.Homepage.as_view(), name='home'),
+    path("", views.HomepageView.as_view(), name='home'),
+    path("/", views.HomepageView.as_view(), name='home'),
+    path("about", views.AboutThePlanetView.as_view(), name='about'),
+    path("esperanto", views.HomepageView.as_view(), name='esperanto'),
+    path("problems", views.ProblemsView.as_view(), name='problems'),
+    path("teams", views.HomepageView.as_view(), name='teams'),
+    path("support", views.HomepageView.as_view(), name='support'),
+    path("esperanto", views.HomepageView.as_view(), name='profile'),
+    path("id-card", views.HomepageView.as_view(), name='card'),
+    path("logout", views.HomepageView.as_view(), name='logout'),
     # UI Kits Html files
 ]
 
