@@ -29,6 +29,8 @@ import json
 import gzip
 from glob import glob, escape
 
+from planet import models
+
 def util_get_numeric(string):
     value = None
     dtype = None
@@ -86,6 +88,32 @@ class ProblemsView(View):
         context = {}  # util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
+
+class ProblemCreateView(CreateView):
+    model = models.Problem
+    fields = ['title', 'body', 'category', 'prize', 'allow_attachment', 'deadline']
+
+class SolutionSubmitSolutionView(View):
+    template_name = 'home/solution_submit.html'
+
+    current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+
+    def get(self, request, *args, **kwargs):
+        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        context = {}  # util_get_i18n_context(current_lang)
+
+        return render(request, self.template_name, context)
+
+def SolutionRatingAjax(request):
+
+    current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+    context = {}
+    solution_id = request.kwargs["solution_id"]
+    rating = request.kwargs["rating"]
+
+    #TODO: compelete code
+
+    return JsonResponse(context)
 
 def HomeJSONView(request):
 

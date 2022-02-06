@@ -30,6 +30,9 @@ urlpatterns = [
     path("esperanto", views.HomepageView.as_view(), name='profile'),
     path("id-card", views.HomepageView.as_view(), name='card'),
     path("logout", views.HomepageView.as_view(), name='logout'),
+    path("problem-create", views.ProblemCreateView.as_view()),
+    path("problem-solve", views.SolutionSubmitSolutionView.as_view()),
+    path("problem-rate", views.SolutionRatingAjax)
     # UI Kits Html files
 ]
 
