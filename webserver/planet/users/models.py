@@ -1,7 +1,10 @@
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 from django.db.models import CharField
 from django.urls import reverse
-django.contrib.auth.get_user_model()
+from django.contrib.auth import get_user_model
+from django.conf import settings
+from django import forms
 from django.utils.translation import gettext_lazy as _
 
 
@@ -51,40 +54,21 @@ class Problem(models.Model):
     created = models.DateTimeField(auto_now_add=True, blank=True)
     deadline = models.DateTimeField(blank=True)
 
-
-class Solve(models.Model):
-    solver = models.CharField(max_length=255)
-    solver_member = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.PROTECT,
-        null=True,
-        blank=True
-    )
-    solver_team = models.ForeignKey(Team,on_delete=models.PROTECT)
-    body = models.TextField()
-    category = forms.ChoiceField(choices=[
-        (1, _("Environment")),
-        (2, _("Politics"))
-    ])
-
-    prize = models.CharField(max_length=30)
-    created = models.DateTimeField(auto_now_add=True, blank=True)
-    deadline = models.DateTimeField(blank=True)
-
 class Solution(models.Model):
     solver_member = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.PROTECT,
-        null=True,
-        blank=True
+        on_delete=models.PROTECT
     )
     solver_team = models.ForeignKey(Team, on_delete=models.PROTECT, null=True, blank=True)
     body = models.TextField()
-    attachment1 = forms.FileField(null=True, blank=True)
-    attachment2 = forms.FileField(null=True, blank=True)
-    attachment3 = forms.FileField(null=True, blank=True)
+    general_attachment = forms.FileField(required=False)
+    metrics_attachment = forms.FileField(required=False)
 
 class SolutionEvaluation(models.Model):
+    evaluator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT
+    )
     cost = models.IntegerField()
     income = models.IntegerField()
     violence = models.IntegerField()
@@ -95,15 +79,19 @@ class SolutionEvaluation(models.Model):
     used_politics = models.IntegerField()
     used_science = models.IntegerField()
     cited_science = models.IntegerField()
-    extra_scale_1 = models.IntegerField(null=True, default=0)
+    extra_scale_1 = models.IntegerField(default=0)
     extra_scale_1_title = models.CharField(max_length=255, default="")
-    extra_scale_2 = models.IntegerField(null=True, default=0)
+    extra_scale_2 = models.IntegerField(default=0)
     extra_scale_2_title = models.CharField(max_length=255, default="")
-    extra_scale_3 = models.IntegerField(null=True, default=0)
+    extra_scale_3 = models.IntegerField(default=0)
     extra_scale_3_title = models.CharField(max_length=255, default="")
 
 
 class SolutionRating(models.Model):
     solution = models.ForeignKey(Solution, on_delete = models.PROTECT)
+    rater = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT
+    )
     rating = models.IntegerField()
 

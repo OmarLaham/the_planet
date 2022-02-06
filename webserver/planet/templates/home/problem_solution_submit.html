@@ -1,6 +1,6 @@
 {% extends 'layouts/base.html' %}
 {% load i18n %}
-{% block title %} About The Planet {% endblock title %}
+{% block title %} Submit Solution {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -12,15 +12,199 @@
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-header pb-0">
-            <h6>About "The Planet"</h6>
+            <h6>Global Warming</h6>
           </div>
           <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-4">
-              Empower people to be able to take real actions that can lead them to the life they desire while challenging the current barriers between them and the chains of the global political system.
+              Contemporary climate change includes both global warming and its impacts on Earth's weather patterns.
               <br />
-              Empower everyone to learn and practise politics in “The Planet” community where the borders between countries vanish and people coexist and speak one unified formal language to lead the movement towards real offline actions.
+              There have been previous periods of climate change, but the current changes are distinctly more rapid and not due to natural causes. Instead, they are caused by the emission of greenhouse gases, mostly carbon dioxide (CO2) and methane. Burning fossil fuels for energy use creates most of these emissions.
               <br />
-              Making world wide changes possible again despite the current global political and social situation.
+              Agriculture, steelmaking, cement production, and forest loss are additional sources.[3] Greenhouse gases are transparent to sunlight, allowing it through to heat the Earth's surface. When the Earth emits that heat as infrared radiation the gases absorb it, trapping the heat near the Earth's surface. As the planet heats up it causes changes like the loss of sunlight-reflecting snow cover, amplifying global warming.
+            </div>
+            <br />
+            <div class="row p-4">
+              <div class="col-lg-3 col-md-6">
+                <span class="text-bold">{% translate "Category" %}</span>:<br />Environment
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <span class="text-bold">{% translate "Submit as" %}</span>:<br />Individual members
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <span class="text-bold">{% translate "The prize" %}</span>:<br />150$
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <span class="text-bold">{% translate "Deadline" %}</span>:<br />31.03.2022 - 23:59:59 GMT
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row">
+        <div class="col-xl-6 col-sm-6 mb-xl-4 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">{% translate "Already Submitted" %}</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      150 Humans<br />
+                      <span class="text-success text-sm font-weight-bolder">55% of the humans</span>
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-sm-6">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">{% translate "Promised will submit" %}</p>
+                    <h5 class="font-weight-bolder mb-0">
+                      33 Humans<br />
+                      <span class="text-success text-sm font-weight-bolder">5% of the humans</span>
+                    </h5>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>{% translate "Before you submit" %}</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-4">
+              Please keep in mind that the solution that meets the best measurments on the
+              following metrics will win the prize:<br />
+              <table class="m-3">
+                <tr>
+                  <td><i class="fas fa-hand-holding-usd text-secondary"></i></td><td> - Costs</td>
+                </tr>
+                <tr>
+                  <td width="25"><i class="fas fa-dollar-sign text-success"></i></td><td> - Future income</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-bomb text-secondary"></i></td><td> - Degree of violence</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-users-slash text-secondary"></i></td><td> - ... loss</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-cart-arrow-down text-secondary"></i></td><td> - ... loss</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-laugh-beam text-success"></i></td><td> - Future opportunities created</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-frown-open text-secondary"></i></td><td> - Future estimated loss</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-brain text-primary"></i></td><td> - Use of statesmanship</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-atom text-primary"></i></td><td> - Use of science</td>
+                </tr>
+                <tr>
+                  <td valign="top"><i class="fas fa-book"></i></td><td> - Citation of the source of every information used. <span class="text-bold">This criteria doesn't have a scale but only a YES or NO value</span>.</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-search-plus"></i></td><td> - A few extra minor metrics.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>{% translate "Submit Your Solution" %}</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-4">
+              Please fill the following form to submit your solution.
+              <br /><br />
+              <form>
+                <table class="w-100">
+                  <tr>
+                    <td width="150" class="text-bold">
+                      Submit as:
+                    </td>
+                    <td>
+                      <select class="form-select mb-3" aria-label="Default select example">
+                        <option selected>John</option>
+                        <option value="1">Monsters Team</option>
+                        <option value="2">Flowers Team</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="150" class="text-bold">
+                      Solution Body:
+                    </td>
+                    <td>
+                      <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="150" class="align-top text-bold">
+                      Metrics Evaluation:
+                    </td>
+                    <td>
+                      <div class="form-group">
+                        <input type="file" class="form-control" id="customFile" />
+                        <br />
+                        * A single .pdf file. <span class="text-danger">(requried)</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="150" class="align-top text-bold">
+                      General attachments:
+                    </td>
+                    <td>
+                      <div class="form-group">
+                        <input type="file" class="form-control" id="customFile" />
+                        <br />
+                        * A single .pdf or .zip file. <span class="text-success">(optional)</span>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <div class="align-right text-end">
+                  <button id="btnSubmit" type="submit" class="btn-sm text-white text-bold" style="background-color: #AB5EB1">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

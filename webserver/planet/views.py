@@ -19,6 +19,14 @@ from django.utils.translation import gettext as _
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
+from django.views.generic import TemplateView, ListView, CreateView
+from planet.users import models
+
+from django.contrib.auth.decorators import login_required, permission_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from django.utils.decorators import method_decorator
+
 import pandas as pd
 import numpy as np
 import math
@@ -29,7 +37,11 @@ import json
 import gzip
 from glob import glob, escape
 
-from planet import models
+def is_content_manager(user):
+    return user.groups.filter(name="ContentManager").exists()
+
+def is_solution_evaluator(user):
+    return user.groups.filter(name="SolutionEvaluator").exists()
 
 def util_get_numeric(string):
     value = None
@@ -64,8 +76,7 @@ class HomepageView(View):
     template_name = 'home/index.html'
 
     def get(self, request, *args, **kwargs):
-
-        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        util_get_valid_lang_or_404(request.LANGUAGE_CODE)
         context = {}#util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
@@ -75,7 +86,8 @@ class AboutThePlanetView(View):
     template_name = 'home/about_the_planet.html'
 
     def get(self, request, *args, **kwargs):
-        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+
         context = {}  # util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
@@ -84,26 +96,29 @@ class ProblemsView(View):
     template_name = 'home/problems.html'
 
     def get(self, request, *args, **kwargs):
-        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+
         context = {}  # util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
 
+@user_passes_test(is_content_manager)
 class ProblemCreateView(CreateView):
     model = models.Problem
     fields = ['title', 'body', 'category', 'prize', 'allow_attachment', 'deadline']
 
-class SolutionSubmitSolutionView(View):
-    template_name = 'home/solution_submit.html'
 
-    current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+class ProblemSubmitSolutionView(View):#LoginRequiredMixin
+    template_name = 'home/problem_solution_submit.html'
 
     def get(self, request, *args, **kwargs):
-        current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+        util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+
         context = {}  # util_get_i18n_context(current_lang)
 
         return render(request, self.template_name, context)
 
+@login_required
 def SolutionRatingAjax(request):
 
     current_lang = util_get_valid_lang_or_404(request.LANGUAGE_CODE)
@@ -114,6 +129,17 @@ def SolutionRatingAjax(request):
     #TODO: compelete code
 
     return JsonResponse(context)
+
+#@user_passes_test(is_solution_evaluator)#, login_url='/member/login')
+class ProblemSolutionEvaluation(View):
+    template_name = 'home/problem_solution_evaluation.html'
+
+    def get(self, request, *args, **kwargs):
+        util_get_valid_lang_or_404(request.LANGUAGE_CODE)
+
+        context = {}  # util_get_i18n_context(current_lang)
+
+        return render(request, self.template_name, context)
 
 def HomeJSONView(request):
 

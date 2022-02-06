@@ -18,7 +18,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
-    path('member/', include("apps.authentication.urls")), # Auth routes - login / register
+    path('human/', include("apps.authentication.urls")), # Auth routes - login / register
     path('i18n/', include('django.conf.urls.i18n')), #https://docs.djangoproject.com/en/dev/topics/i18n/translation/#the-set-language-redirect-view
     path("", views.HomepageView.as_view(), name='home'),
     path("/", views.HomepageView.as_view(), name='home'),
@@ -29,9 +29,9 @@ urlpatterns = [
     path("support", views.HomepageView.as_view(), name='support'),
     path("esperanto", views.HomepageView.as_view(), name='profile'),
     path("id-card", views.HomepageView.as_view(), name='card'),
-    path("logout", views.HomepageView.as_view(), name='logout'),
-    path("problem-create", views.ProblemCreateView.as_view()),
-    path("problem-solve", views.SolutionSubmitSolutionView.as_view()),
+    path("problem-create", views.ProblemCreateView),
+    path("problem-solve/<int:problem_id>", views.ProblemSubmitSolutionView.as_view()),
+    path("problem-solution-evaluate/<int:solution_id>", views.ProblemSolutionEvaluation.as_view()),
     path("problem-rate", views.SolutionRatingAjax)
     # UI Kits Html files
 ]

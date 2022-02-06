@@ -1,0 +1,320 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} Evaluate Solution {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>Global Warming</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-4">
+              <table class="w-100">
+                <tr>
+                  <td width="180" class="text-bold">
+                    Submit as:
+                  </td>
+                  <td>
+                    John (Individual)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-bold align-top">
+                    Solution Body:
+                  </td>
+                  <td>
+                    Contemporary climate change includes both global warming and its impacts on Earth's weather patterns.<br />
+                    There have been previous periods of climate change, but the current changes are distinctly more rapid and not due to natural causes. Instead, they are caused by the emission of greenhouse gases, mostly carbon dioxide (CO2) and methane. Burning fossil fuels for energy use creates most of these emissions.<br />
+                    Agriculture, steelmaking, cement production, and forest loss are additional sources.[3] Greenhouse gases are transparent to sunlight, allowing it through to heat the Earth's surface. When the Earth emits that heat as infrared radiation the gases absorb it, trapping the heat near the Earth's surface. As the planet heats up it causes changes like the loss of sunlight-reflecting snow cover, amplifying global warming.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-top text-bold">
+                    Metrics Evaluation:
+                  </td>
+                  <td>
+                    <a href="" class="text-primary">
+                      Download file <i class="fas fa-cloud-download-alt"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-top text-bold">
+                    General attachments:
+                  </td>
+                  <td>
+                     <a href="" class="text-primary">
+                       Download file <i class="fas fa-cloud-download-alt"></i>
+                     </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <h6>{% translate "Evaluation Metrics" %}</h6>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-4">
+              Please keep in mind that the solution that meets the best measurments on the
+              following metrics will win the prize:<br />
+
+              <table class="m-3">
+                <tr>
+                  <td width="120" class="p-2">
+                    <input type="text" class="form-control" id="costs" placeholder="0">
+                  </td>
+                  <td><i class="fas fa-hand-holding-usd text-secondary"></i></td><td> - Costs</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <input type="text" class="form-control" id="future-income" placeholder="0">
+                  </td>
+                  <td width="25"><i class="fas fa-dollar-sign text-success"></i></td><td> - Future income</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="violence" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-bomb text-secondary"></i></td><td> - Degree of violence</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="human-loss" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-users-slash text-secondary"></i></td><td> - ... loss</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="non-human-loss" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-cart-arrow-down text-secondary"></i></td><td> - ... loss</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="future-opportunities" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-laugh-beam text-success"></i></td><td> - Future opportunities created</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="future-loss" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-frown-open text-secondary"></i></td><td> - Future estimated loss</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="statesmanship" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-brain text-primary"></i></td><td> - Use of statesmanship</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="use-of-science" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-atom text-primary"></i></td><td> - Use of science</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="info-citation" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-book"></i></td><td> - Information citation</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="extra-metric-1" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-search-plus"></i></td><td> - Extra minor metric 1.</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="extra-metric-2" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-search-plus"></i></td><td> - Extra minor metric 2.</td>
+                </tr>
+                <tr>
+                  <td class="p-2">
+                    <select id="extra-metric-3" class="form-select" aria-label="Default select example">
+                      <option selected>--</option>
+                      <option value="0.0">0.0</option>
+                      <option value="0.5">0.5</option>
+                      <option value="0.0">1.0</option>
+                      <option value="0.5">1.5</option>
+                      <option value="0.0">2.0</option>
+                      <option value="0.5">2.5</option>
+                      <option value="0.0">3.0</option>
+                      <option value="0.5">3.5</option>
+                      <option value="0.0">4.0</option>
+                      <option value="0.5">4.5</option>
+                      <option value="0.0">5.0</option>
+                    </select>
+                  </td>
+                  <td><i class="fas fa-search-plus"></i></td><td> - Extra minor metric 3.</td>
+                </tr>
+              </table>
+              <div class="align-right text-end">
+                <button id="btnSubmit" type="submit" class="btn-sm text-white text-bold" style="background-color: #AB5EB1">Submit</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+{% endblock javascripts %}
